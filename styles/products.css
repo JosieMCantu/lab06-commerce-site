@@ -1,0 +1,8 @@
+body {
+    background-color: lightblue;
+}
+ul {
+    border: 1px solid black;
+    width: 200px;
+    list-style-type: none;
+}
