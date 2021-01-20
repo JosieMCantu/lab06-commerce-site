@@ -2,7 +2,16 @@ body {
     background-color: lightblue;
 }
 ul {
-    border: 1px solid black;
-    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
     list-style-type: none;
+    justify-content: space-between;
+}
+li {
+    width: 200px;
+    border: 1px solid black;
+}
+img {
+    width: 150px;
 }
