@@ -12,7 +12,7 @@ export const vintageItem = [
         id: 2,
         name: 'Shoe Horn',
         price: 100,
-        color: 'brass',
+        color: 'wood',
         size: 'small',
     },
     {
@@ -26,7 +26,7 @@ export const vintageItem = [
     {
         image: 1910,
         id: 4,
-        name: 'Spirs',
+        name: 'Spurs',
         price: 25,
         color: 'gold',
         size: 'large',
