@@ -14,7 +14,7 @@ test('should take in a product and return an li', (expect) => {
     };
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li><p class="image-element">Image: 1940</p><p class="id-element">Id: 1</p><p class="name-element">Name: Cowboy Hat</p><p class="price-element">Price: 65</p><p class="color-element">Color: red</p><p class="size-element">Size: 10</p><button>Add to Cart</button></li>`;
+    const expected = `<li class="product-element"><p class="image-element">Image: 1940</p><p class="id-element">Id: 1</p><p class="name-element">Name: Cowboy Hat</p><p class="price-element">Price: 65</p><p class="color-element">Color: red</p><p class="size-element">Size: 10</p><button>Add to Cart</button></li>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
