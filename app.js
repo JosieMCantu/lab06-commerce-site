@@ -1,4 +1,3 @@
-// import functions and grab DOM elements
 import { vintageItem } from '/data.js';
 import { renderProduct } from '/render-product.js';
 
