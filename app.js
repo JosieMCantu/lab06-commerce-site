@@ -2,11 +2,11 @@
 import { vintageItem } from '/data.js';
 import { renderProduct } from '/render-product.js';
 
-const list = document.getElementById('list');
+const list = document.getElementById('list-items');
 
 for (let product of vintageItem){
-    const itemElement = renderProduct(product);
-
+    const productElement = renderProduct(product);
+    list.append(productElement);
 }
 
 // Loop through here

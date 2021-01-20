@@ -1,7 +1,7 @@
 // get things on the page here
 export function renderProduct(product){
     const li = document.createElement('li');
-    
+    li.classList.add('product-element');
 
     const pImage = document.createElement('p');
     pImage.textContent = `Image: ${product.image}`;
