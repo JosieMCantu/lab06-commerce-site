@@ -1,10 +1,12 @@
 // import functions and grab DOM elements
-import { vintageItem } from 'data.js';
-import { renderProduct } from 'render-product.js'
+import { vintageItem } from '/data.js';
+import { renderProduct } from '/render-product.js';
 
-// initialize state
+const list = document.getElementById('list');
 
-// set event listeners to update state and DOM
+for (let product of vintageItem){
+    const itemElement = renderProduct(product);
 
+}
 
 // Loop through here

@@ -1,10 +1,11 @@
 export const vintageItem = [
     {
-        name: 'Luke',
+        image: 1940,
         id: 1,
+        name: 'Luke',
         price: 65,
-        color: red,
+        color: 'red',
         size: 10,
-        era: 1940,
+        
     },
 ];
