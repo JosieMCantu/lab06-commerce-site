@@ -1,5 +1,5 @@
-import { vintageItem } from '/data.js';
-import { renderProduct } from '/render-product.js';
+import { vintageItem } from './data.js';
+import { renderProduct } from './render-product.js';
 
 const list = document.getElementById('list-items');
 
