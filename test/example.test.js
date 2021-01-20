@@ -4,7 +4,7 @@ import { renderProduct } from '../render-product.js';
 const test = QUnit.test;
 
 test('should take in a product and return an li', (expect) => {
-    const listProducts  = {
+    const listProducts = {
         image: 1940,
         id: 1,
         name: 'Cowboy Hat',

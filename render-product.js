@@ -37,6 +37,5 @@ export function renderProduct(product){
     addButton.textContent = 'Add to Cart';
     li.append(addButton);
 
-    
     return li;
 }

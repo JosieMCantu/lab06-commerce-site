@@ -8,5 +8,3 @@ for (let product of vintageItem){
     const productElement = renderProduct(product);
     list.append(productElement);
 }
-
-// Loop through here
