@@ -1,25 +1,26 @@
-import { vintageItem } from '../products/data.js';
+import { cart } from '../cart/cart-data.js';
+import { vintageItem } from '../products/data.js'
 import { findById } from '../cart/cart-utils.js';
 
 
-export function renderTableRow(cartItem){
-    const quantity = cartItem.quantity;
-    const product = findById(cartItem.id, product);
+export function renderTableRow(cartItem, product){
     const tr = document.createElement('tr');
+    
+    
+    const quantity = cartItem.quantity;
     const nameTd = document.createElement('td');
-    const quantityTd = document.createElement('td');
-    const priceTd = document.createElement('td');
-
     nameTd.textContent = product.name;
+
+    const quantityTd = document.createElement('td');
     quantityTd.textContent = quantity;
-    priceTd.textContent = quantity * product.price;
+
+    const priceTd = document.createElement('td');
+    priceTd.textContent = product.price;
+
+    tr.append(nameTd, quantityTd, priceTd);
+    return tr;
+    
 }
-
-
-
-
-
-
 
 
 
