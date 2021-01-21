@@ -1,7 +1,7 @@
+import { calcItemTotal } from "./cart-utils.js";
 
 export function renderTableRow(cartItem, product){
     const tr = document.createElement('tr');
-    
     
     const quantity = cartItem.quantity;
     const nameTd = document.createElement('td');
@@ -11,16 +11,13 @@ export function renderTableRow(cartItem, product){
     quantityTd.textContent = quantity;
 
     const priceTd = document.createElement('td');
-    priceTd.textContent = product.price;
+    priceTd.textContent = `$${calcItemTotal(cartItem, product)}`;
 
     tr.append(nameTd, quantityTd, priceTd);
     return tr;
     
 }
 
-export function getProductTotal(cartItem, product){
-    return cartItem.quantity * product.price;
-}
 
 
 

@@ -5,7 +5,7 @@ export const cart = [
     },
     {
         id: 2,
-        quantity: 1
+        quantity: 3
     },
     {
         id: 3,
