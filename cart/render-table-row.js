@@ -23,6 +23,11 @@ export function renderTableRow(cartItem, product){
 }
 
 
+export function getProductTotal(cartItem, product){
+    return cartItem.quantity * product.price;
+}
+
+
 
 
 
