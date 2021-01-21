@@ -1,62 +1,83 @@
 // IMPORT MODULES under test here:
-import { findById } from '../cart/cart-utils.js';
-export const vintageItem = [
-{
-    image: 1940,
-    id: 1,
-    name: 'Cowboy Hat',
-    price: 65,
-    color: 'red',
-    size: 10,
-},
-{
-    image: 1930,
-    id: 2,
-    name: 'Shoe Horn',
-    price: 100,
-    color: 'wood',
-    size: 'small',
-},
-{
-    image: 1950,
-    id: 3,
-    name: 'Belt Buckle',
-    price: 165,
-    color: 'silver',
-    size: 'large',
-},
-{
-    image: 1910,
-    id: 4,
-    name: 'Spurs',
-    price: 25,
-    color: 'gold',
-    size: 'large',
-}
-];
+import { calcItemTotal } from '../cart/cart-app.js';
+
 const test = QUnit.test;
 
-test('should take and id and array and return the object with same id from array', (expect) => {
+test('should take in 3 and 65 and return 195', (expect) => {
 
     //Arrange
     // Set up your arguments and expectations
-    const expected = {
-        image: 1940,
-        id: 1,
-        name: 'Cowboy Hat',
-        price: 65,
-        color: 'red',
-        size: 10,
-    }
+    const expected = 195;
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = findById(1, vintageItem);
+    const actual = calcItemTotal(3, 65);
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.deepEqual(actual, expected);
+    expect.equal(actual, expected);
 });
+
+
+
+// import { findById } from '../cart/cart-utils.js';
+// export const vintageItem = [
+// {
+//     image: 1940,
+//     id: 1,
+//     name: 'Cowboy Hat',
+//     price: 65,
+//     color: 'red',
+//     size: 10,
+// },
+// {
+//     image: 1930,
+//     id: 2,
+//     name: 'Shoe Horn',
+//     price: 100,
+//     color: 'wood',
+//     size: 'small',
+// },
+// {
+//     image: 1950,
+//     id: 3,
+//     name: 'Belt Buckle',
+//     price: 165,
+//     color: 'silver',
+//     size: 'large',
+// },
+// {
+//     image: 1910,
+//     id: 4,
+//     name: 'Spurs',
+//     price: 25,
+//     color: 'gold',
+//     size: 'large',
+// }
+// ];
+// const test = QUnit.test;
+
+// test('should take and id and array and return the object with same id from array', (expect) => {
+
+//     //Arrange
+//     // Set up your arguments and expectations
+//     const expected = {
+//         image: 1940,
+//         id: 1,
+//         name: 'Cowboy Hat',
+//         price: 65,
+//         color: 'red',
+//         size: 10,
+//     }
+    
+//     //Act 
+//     // Call the function you're testing and set the result to a const
+//     const actual = findById(1, vintageItem);
+
+//     //Expect
+//     // Make assertions about what is expected versus the actual result
+//     expect.deepEqual(actual, expected);
+// });
 
 
 

@@ -1,5 +1,18 @@
-export function renderTableRow(){
-    
+import { vintageItem } from '../products/data.js';
+import { findById } from '../cart/cart-utils.js';
+
+
+export function renderTableRow(cartItem){
+    const quantity = cartItem.quantity;
+    const product = findById(cartItem.id, product);
+    const tr = document.createElement('tr');
+    const nameTd = document.createElement('td');
+    const quantityTd = document.createElement('td');
+    const priceTd = document.createElement('td');
+
+    nameTd.textContent = product.name;
+    quantityTd.textContent = quantity;
+    priceTd.textContent = quantity * product.price;
 }
 
 
