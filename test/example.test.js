@@ -1,4 +1,27 @@
 // IMPORT MODULES under test here:
+import { calcOrderTotal } from '../cart/cart-utils.js';
+import { cart } from '../cart/cart-data.js';
+import { vintageItem } from '../products/data.js';
+
+const test = QUnit.test;
+
+test('should take in cart item and match it to vintage product', (expect) => {
+    
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 970;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcOrderTotal(cart, vintageItem);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});
+
+
+
 
 // import { calcItemTotal } from '../cart/cart-app.js';
 
