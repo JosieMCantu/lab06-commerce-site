@@ -1,7 +1,3 @@
-import { cart } from '../cart/cart-data.js';
-import { vintageItem } from '../products/data.js'
-import { findById } from '../cart/cart-utils.js';
-
 
 export function renderTableRow(cartItem, product){
     const tr = document.createElement('tr');
@@ -21,7 +17,6 @@ export function renderTableRow(cartItem, product){
     return tr;
     
 }
-
 
 export function getProductTotal(cartItem, product){
     return cartItem.quantity * product.price;

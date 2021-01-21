@@ -1,35 +1,35 @@
 // IMPORT MODULES under test here:
 
-import { calcItemTotal } from '../cart/cart-app.js';
+// import { calcItemTotal } from '../cart/cart-app.js';
 
-const test = QUnit.test;
+// const test = QUnit.test;
 
-test('should take in 3 and 65 sould return 195', (expect) => {
-    const cartProduct = {
-        id: 1,
-        quantity: 3
-    };
-    const product = {
-        image: 1940,
-        id: 1,
-        name: 'Cowboy Hat',
-        price: 65,
-        color: 'red',
-        size: 10,
-    };
+// test('should take in 3 and 65 sould return 195', (expect) => {
+//     const cartProduct = {
+//         id: 1,
+//         quantity: 3
+//     };
+//     const product = {
+//         image: 1940,
+//         id: 1,
+//         name: 'Cowboy Hat',
+//         price: 65,
+//         color: 'red',
+//         size: 10,
+//     };
     
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = 195;
+//     //Arrange
+//     // Set up your arguments and expectations
+//     const expected = 195;
     
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = calcItemTotal(,);
+//     //Act 
+//     // Call the function you're testing and set the result to a const
+//     const actual = calcItemTotal(,);
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
-});
+//     //Expect
+//     // Make assertions about what is expected versus the actual result
+//     expect.equal(actual, expected);
+// });
 // import { calcItemTotal } from '../cart/cart-app.js';
 
 // const test = QUnit.test;
