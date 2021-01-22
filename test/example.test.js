@@ -2,14 +2,63 @@
 import { calcOrderTotal } from '../cart/cart-utils.js';
 import { cart } from '../cart/cart-data.js';
 import { vintageItem } from '../products/data.js';
+import { calcItemTotal } from '../cart/cart-utils.js';
+import { renderTableRow } from '../cart/render-table-row.js';
+import { findById } from '../cart/cart-utils.js';
+import { renderProduct } from '../products/render-product.js';
+import { clearCart, getCart, setCart } from '../cart/cart.js';
 
 const test = QUnit.test;
 
-test('should take in cart item and match it to vintage product', (expect) => {
+test('setCart should stringify contents of cart and send to loacl storage', (expect) => {
+ const testCart = [
+    {
+        id: 1,
+        quantity: 5
+    },
+    {
+        id: 2,
+        quantity: 3
+    },
+    {
+        id: 3,
+        quantity: 3
+    },
+    {
+        id: 4,
+        quantity: 2
+    }
+    ];
+
+
+    const stringyCart = setCart(testCart);
+    setCart(testCart);
+    const expected = stringyCart;
+
+    const actual = getCart();
+
+
+    expect.deepEqual(actual, expected);
+});
+
+test('clearCart should stringify the default cart and set it into local storage and return an empty cart', (expect) => {
+
+
+
+    const expected = [];
+
+    clearCart();
+
+    const actual = getCart();
+
+    expect.deepEqual(actual, expected);
+});
+
+test('calcOrderTotal should take in a cart item and an array item', (expect) => {
     
     //Arrange
     // Set up your arguments and expectations
-    const expected = 970;
+    const expected = 1170;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -19,41 +68,6 @@ test('should take in cart item and match it to vintage product', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
 });
-
-import { calcItemTotal } from '../cart/cart-app.js';
-
-const test = QUnit.test;
-
-test('should take in 3 and 65 sould return 195', (expect) => {
-    const cartProduct = {
-        id: 1,
-        quantity: 3
-    };
-    const product = {
-        image: 1940,
-        id: 1,
-        name: 'Cowboy Hat',
-        price: 65,
-        color: 'red',
-        size: 10,
-    };
-    
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = 195;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = calcItemTotal(,);
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
-});
-
-import { calcItemTotal } from '../cart/cart-app.js';
-
-const test = QUnit.test;
 
 test('should take in 3 and 65 sould return 195', (expect) => {
     const cartProduct = {
@@ -82,10 +96,6 @@ test('should take in 3 and 65 sould return 195', (expect) => {
     expect.equal(actual, expected);
 });
 
-IMPORT MODULES under test here:
-import { renderTableRow } from '../cart/render-table-row.js';
-
-const test = QUnit.test;
 
 test('should take in a cart line item and return a table row', (expect) => {
     const cartProduct = {
@@ -102,7 +112,7 @@ test('should take in a cart line item and return a table row', (expect) => {
     };
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<tr><td>Cowboy Hat</td><td>5</td><td>65</td></tr>`
+    const expected = `<tr><td>Cowboy Hat</td><td>5</td><td>$325</td></tr>`
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -113,24 +123,7 @@ test('should take in a cart line item and return a table row', (expect) => {
     expect.equal(actual.outerHTML, expected);
 });
 
-test('should take in 3 and 65 and return 195', (expect) => {
-
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = 195;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = calcItemTotal(3, 65);
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
-});
-
-
-import { findById } from '../cart/cart-utils.js';
-export const vintageItem = [
+export const vItem = [
 {
     image: 1940,
     id: 1,
@@ -165,8 +158,6 @@ export const vintageItem = [
 }
 ];
 
-const test = QUnit.test;
-
 test('should take and id and array and return the object with same id from array', (expect) => {
 
     //Arrange
@@ -189,8 +180,6 @@ test('should take and id and array and return the object with same id from array
     expect.deepEqual(actual, expected);
 });
 
-import { renderProduct } from '../render-product.js';
-const test = QUnit.test;
 test('should take in a product and return an li', (expect) => {
     const listProducts = {
         image: 1940,
@@ -212,4 +201,3 @@ test('should take in a product and return an li', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
 });
-

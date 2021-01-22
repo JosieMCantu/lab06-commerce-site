@@ -30,6 +30,7 @@ tr.append(tdTotal);
 tbody.append(tr);
 
 const button = document.querySelector('button');
+
 button.addEventListener('click', () => {
     clearCart();
     alert(JSON.stringify(cart, true, 2));
