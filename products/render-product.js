@@ -1,3 +1,5 @@
+import { addToCart } from '../cart/cart.js';
+
 
 export function renderProduct(product){
     const li = document.createElement('li');
@@ -34,8 +36,12 @@ export function renderProduct(product){
     li.append(pSize);
 
     const addButton = document.createElement('button');
+    addButton.addEventListener('click', () => {
+        addToCart(product.id);
+    });
     addButton.textContent = 'Add to Cart';
     li.append(addButton);
 
     return li;
 }
+

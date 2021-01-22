@@ -27,7 +27,12 @@ tdTotal.textContent = `Cart Total: $${total}`;
 tr.append(tdTotal);
 tbody.append(tr);
 
-
+// /// add event listener here to cart buttons
+//     // add alert on click
+//     addButton.addEventListener('click', => {
+//         const cart = getCart();
+//         alert(JSON.stringify(cart, true));
+//     });
 
 
 
