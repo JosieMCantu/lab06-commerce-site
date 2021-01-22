@@ -11,23 +11,23 @@ import { clearCart, getCart, setCart } from '../cart/cart.js';
 const test = QUnit.test;
 
 test('setCart should stringify contents of cart and send to loacl storage', (expect) => {
- const testCart = [
-    {
-        id: 1,
-        quantity: 5
-    },
-    {
-        id: 2,
-        quantity: 3
-    },
-    {
-        id: 3,
-        quantity: 3
-    },
-    {
-        id: 4,
-        quantity: 2
-    }
+    const testCart = [
+        {
+            id: 1,
+            quantity: 5
+        },
+        {
+            id: 2,
+            quantity: 3
+        },
+        {
+            id: 3,
+            quantity: 3
+        },
+        {
+            id: 4,
+            quantity: 2
+        }
     ];
 
 
@@ -124,38 +124,38 @@ test('should take in a cart line item and return a table row', (expect) => {
 });
 
 export const vItem = [
-{
-    image: 1940,
-    id: 1,
-    name: 'Cowboy Hat',
-    price: 65,
-    color: 'red',
-    size: 10,
-},
-{
-    image: 1930,
-    id: 2,
-    name: 'Shoe Horn',
-    price: 100,
-    color: 'wood',
-    size: 'small',
-},
-{
-    image: 1950,
-    id: 3,
-    name: 'Belt Buckle',
-    price: 165,
-    color: 'silver',
-    size: 'large',
-},
-{
-    image: 1910,
-    id: 4,
-    name: 'Spurs',
-    price: 25,
-    color: 'gold',
-    size: 'large',
-}
+    {
+        image: 1940,
+        id: 1,
+        name: 'Cowboy Hat',
+        price: 65,
+        color: 'red',
+        size: 10,
+    },
+    {
+        image: 1930,
+        id: 2,
+        name: 'Shoe Horn',
+        price: 100,
+        color: 'wood',
+        size: 'small',
+    },
+    {
+        image: 1950,
+        id: 3,
+        name: 'Belt Buckle',
+        price: 165,
+        color: 'silver',
+        size: 'large',
+    },
+    {
+        image: 1910,
+        id: 4,
+        name: 'Spurs',
+        price: 25,
+        color: 'gold',
+        size: 'large',
+    }
 ];
 
 test('should take and id and array and return the object with same id from array', (expect) => {
