@@ -3,7 +3,7 @@ import { vintageItem } from '../products/data.js';
 import { renderTableRow } from '../cart/render-table-row.js';
 import { findById } from './cart-utils.js';
 import { calcOrderTotal } from './cart-utils.js';
-import { getCart } from '../cart/cart.js';
+import { getCart, clearCart } from '../cart/cart.js';
 
 const cart = getCart();
 
@@ -30,7 +30,10 @@ tr.append(tdTotal);
 tbody.append(tr);
 
 const button = document.querySelector('button');
-console.log(button);
 button.addEventListener('click', () => {
-    cart = getCart();
+    clearCart();
+    alert(JSON.stringify(cart, true, 2));
+    location.reload();
+    location.href = '../index.html';
+
 });
