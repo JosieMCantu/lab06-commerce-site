@@ -112,7 +112,7 @@ test('should take in a cart line item and return a table row', (expect) => {
     };
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<tr><td>Cowboy Hat</td><td>5</td><td>$325</td></tr>`
+    const expected = `<tr><td>Cowboy Hat</td><td>5</td><td>$325</td></tr>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -169,7 +169,7 @@ test('should take and id and array and return the object with same id from array
         price: 65,
         color: 'red',
         size: 10,
-    }
+    };
     
     //Act 
     // Call the function you're testing and set the result to a const
