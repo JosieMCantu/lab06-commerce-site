@@ -1,4 +1,3 @@
-
 export function findById(id, array){
     for (let product of array) {
         if (product.id === id){
@@ -13,10 +12,10 @@ export function calcItemTotal(cartItem, product){
 
 let total = 0;
 export function calcOrderTotal(cart, vintageItem){
-   for(let product of cart){
-       const matchingProduct = findById(product.id, vintageItem);
-       const lineTotal = calcItemTotal(product, matchingProduct);
-       total = total + lineTotal;
+   for (let product of cart){
+    const matchingProduct = findById(product.id, vintageItem);
+    const lineTotal = calcItemTotal(product, matchingProduct);
+    total = total + lineTotal;
    }
     return total;
 }

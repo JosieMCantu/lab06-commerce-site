@@ -1,5 +1,4 @@
-import { findById } from '../cart/cart-utils.js'
-import { cart } from './cart-data.js';
+import { findById } from '../cart/cart-utils.js';
 
 const CART = 'CART'; // Magic string
 const defaultEmptyCart = []; // Empty cart

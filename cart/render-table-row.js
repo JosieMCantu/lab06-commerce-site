@@ -1,4 +1,4 @@
-import { calcItemTotal } from "./cart-utils.js";
+import { calcItemTotal } from './cart-utils.js';
 
 export function renderTableRow(cartItem, product){
     const tr = document.createElement('tr');
