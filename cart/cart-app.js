@@ -1,9 +1,11 @@
-import { cart } from '../cart/cart-data.js';
+// import { cart } from '../cart/cart-data.js';
 import { vintageItem } from '../products/data.js';
 import { renderTableRow } from '../cart/render-table-row.js';
 import { findById } from './cart-utils.js';
 import { calcOrderTotal } from './cart-utils.js';
+import { getCart } from '../cart/cart.js';
 
+const cart = getCart();
 
 const tbody = document.querySelector('tbody');
 for (let item of cart) {
@@ -27,29 +29,8 @@ tdTotal.textContent = `Cart Total: $${total}`;
 tr.append(tdTotal);
 tbody.append(tr);
 
-// /// add event listener here to cart buttons
-//     // add alert on click
-//     addButton.addEventListener('click', => {
-//         const cart = getCart();
-//         alert(JSON.stringify(cart, true));
-//     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const button = document.querySelector('button');
+console.log(button);
+button.addEventListener('click', () => {
+    cart = getCart();
+});
