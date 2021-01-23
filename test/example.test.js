@@ -40,6 +40,16 @@ test('clearCart should stringify the default cart and set it into local storage 
     expect.deepEqual(actual, expected);
 });
 
+test('getCart should get items in the cart from local storage if something is there parse it if nothing return empty cart', (expect) => {
+
+    const expected = [];
+
+    const actual = getCart();
+
+    expect.deepEqual(actual, expected);
+});
+
+
 test('calcOrderTotal should take in a cart item and an array item', (expect) => {
 
     //Arrange
