@@ -10,35 +10,21 @@ import { clearCart, getCart, setCart } from '../cart/cart.js';
 
 const test = QUnit.test;
 
-test('setCart should stringify contents of cart and send to loacl storage', (expect) => {
+test('setCart should stringify contents of cart and send it to loacl storage', (expect) => {
     const testCart = [
         {
             id: 1,
             quantity: 5
-        },
-        {
-            id: 2,
-            quantity: 3
-        },
-        {
-            id: 3,
-            quantity: 3
-        },
-        {
-            id: 4,
-            quantity: 2
         }
     ];
 
+    const stringyCart = JSON.stringify(testCart);
 
-    const stringyCart = setCart(testCart);
-    setCart(testCart);
-    const expected = stringyCart;
+    const expected = localStorage.setItem('CART', stringyCart);
 
-    const actual = getCart();
+    const cartActual = setCart(testCart);
 
-
-    expect.deepEqual(actual, expected);
+    expect.deepEqual(cartActual, expected);
 });
 
 test('clearCart should stringify the default cart and set it into local storage and return an empty cart', (expect) => {
@@ -55,11 +41,11 @@ test('clearCart should stringify the default cart and set it into local storage 
 });
 
 test('calcOrderTotal should take in a cart item and an array item', (expect) => {
-    
+
     //Arrange
     // Set up your arguments and expectations
     const expected = 1170;
-    
+
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = calcOrderTotal(cart, vintageItem);
@@ -69,7 +55,7 @@ test('calcOrderTotal should take in a cart item and an array item', (expect) => 
     expect.equal(actual, expected);
 });
 
-test('should take in 3 and 65 sould return 195', (expect) => {
+test('calcItemTotal should take in 3 and 65 sould return 195', (expect) => {
     const cartProduct = {
         id: 1,
         quantity: 3
@@ -82,11 +68,11 @@ test('should take in 3 and 65 sould return 195', (expect) => {
         color: 'red',
         size: 10,
     };
-    
+
     //Arrange
     // Set up your arguments and expectations
     const expected = 195;
-    
+
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = calcItemTotal(cartProduct, product);
@@ -97,7 +83,7 @@ test('should take in 3 and 65 sould return 195', (expect) => {
 });
 
 
-test('should take in a cart line item and return a table row', (expect) => {
+test('renderTableRow should take in a cart line item and return a table row', (expect) => {
     const cartProduct = {
         id: 1,
         quantity: 5
@@ -113,7 +99,7 @@ test('should take in a cart line item and return a table row', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = `<tr><td>Cowboy Hat</td><td>5</td><td>$325</td></tr>`;
-    
+
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = renderTableRow(cartProduct, product);
@@ -122,7 +108,6 @@ test('should take in a cart line item and return a table row', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
 });
-
 export const vItem = [
     {
         image: 1940,
@@ -158,8 +143,7 @@ export const vItem = [
     }
 ];
 
-test('should take and id and array and return the object with same id from array', (expect) => {
-
+test('findById should take and id and array and return the object with same id from array', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = {
@@ -170,7 +154,6 @@ test('should take and id and array and return the object with same id from array
         color: 'red',
         size: 10,
     };
-    
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = findById(1, vintageItem);
@@ -180,7 +163,7 @@ test('should take and id and array and return the object with same id from array
     expect.deepEqual(actual, expected);
 });
 
-test('should take in a product and return an li', (expect) => {
+test('renderProduct should take in a product and return an li', (expect) => {
     const listProducts = {
         image: 1940,
         id: 1,
@@ -192,7 +175,7 @@ test('should take in a product and return an li', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = `<li class="product-element"><p class="image-element">Image: 1940</p><p class="id-element">Id: 1</p><p class="name-element">Name: Cowboy Hat</p><p class="price-element">Price: 65</p><p class="color-element">Color: red</p><p class="size-element">Size: 10</p><button>Add to Cart</button></li>`;
-    
+
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = renderProduct(listProducts);
